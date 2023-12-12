@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  word-break:break-all;
+}
+
+.container { 
+  background-color: #c1b7b0;
+  display: grid;
+  width:100wh;
+  height: 100vh;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 50% 50%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Monday Wednesday Friday Sunday"
+    "Tuesday Thursday Saturday Sunday";
+}
+
+.week_day {
+  border: solid;
+}
+
+.Monday, .Wednesday, .Friday, .Tuesday, .Thursday, .Saturday, .Sunday {
+  border: solid;
+  overflow-y: scroll;
+  border-width: thin;
+  font-size: x-large;
+}
+
+.Monday { 
+  grid-area: Monday;
+}
+
+.Wednesday { 
+  grid-area: Wednesday;
+}
+
+.Friday { 
+  grid-area: Friday;
+}
+
+.Tuesday { 
+  grid-area: Tuesday;
+}
+
+.Thursday { 
+  grid-area: Thursday;
+}
+
+.Saturday { 
+  grid-area: Saturday;
+}
+
+.Sunday { 
+  grid-area: Sunday;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+p {
+  margin: 0.5%;
+  color: #3355aa;
+}
+
+h2 {
+  font-size: medium;
+  margin: 0.5%;
+  text-decoration: underline;
+}
+
+.done_task {
+  background-color: #46CA50;
+  color: #251EA9;
+}
+
+.failed_task {
+  background-color: #d8153c;
+  color: #e0f9ff;
+  
+}
+
+</style>
+
+<body">
+  <div class="container">
+    <div class="Monday">
+      <h2>Понедельник 11.12.23</h2>
+      <p><span class = "failed_task">1) Почистить зубы с утра</span></p>
+      <p><span class = "done_task">2) Задача</span></p>
+      <p>3) Задача</p>
+      <p>4) Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+    </div>
+    <div class="Wednesday">
+      <h2>Среда</h2>
+      <p>test_Wednesday</p>
+    </div>
+    <div class="Friday">
+      <h2>Пятница</h2>
+      <p>test_Friday</p>
+    </div>
+    <div class="Tuesday">
+      <h2>Вторник</h2>
+      <p>test_Tuesday</p>
+    </div>
+    <div class="Thursday">
+      <h2>Четверг</h2>
+      <p>test_Thursday</p>
+    </div>
+    <div class="Saturday">
+      <h2>Суббота</h2>
+      <p>test_Saturday</p>
+      <p>Задачаааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+    </div>
+    <div class="Sunday">
+      <h2>Воскресенье</h2>
+      <p>test_Sunday</p>
+    </div>
+  </div>
+</body>
+</html>

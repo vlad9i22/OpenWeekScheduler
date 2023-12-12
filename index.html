@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  word-break:break-all;
+}
+
+body {
+  width:100wh;
+  height: 100vh;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+div.mycontainer {
+  height: 50%;
+  width: 75%;
+  /* example padding, font-size, background, etc */
+  padding: 0px;
+  font-size: 15px;
+  background-color: lightskyblue;
+}
+
+div.mycontainer div {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 33.33333333%;
+  height: 100%;
+  float:left;
+  margin: 0;
+  padding: 0;
+} 
+::-webkit-scrollbar {
+    display: none;
+}
+
+div.right_container {
+  height: 100%;
+  width: 25%;
+
+  position: relative;
+  left: 75%;
+  top: -100%;
+  padding: 0px;
+  font-size: 15px;
+  background-color: lightskyblue;
+  float:left;
+  margin: 0;
+  padding: 0;
+}
+
+
+p {
+  margin: 0;
+}
+</style>
+
+<body>
+  <div class="mycontainer">
+    
+    <div style="background-color:#FFF4A3;">
+      <h2>Понедельник</h2>
+      <p>Задачаааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+      <p>Задача</p>
+    </div>
+    
+    <div style="background-color:#FFC0C7;">
+      <h2>Среда</h2>
+      <p>Oslo is the capital city of Norway.</p>
+      <p>Oslo has over 600.000 inhabitants.</p>
+    </div>
+    
+    <div style="background-color:#D9EEE1;">
+      <h2>Пятница</h2>
+      <p>Rome is the capital city of Italy.</p>
+      <p>Rome has almost 3 million inhabitants.</p>
+    </div>
+  </div>
+  <div class="mycontainer">
+    <div style="background-color:#35c28c;">
+      <h2>Вторник</h2>
+      <p>London is the capital city of England.</p>
+      <p>London has over 13 million inhabitants.</p>
+    </div>
+    <div style="background-color:#2b0a77;">
+      <h2>Четверг</h2>
+      <p>London is the capital city of England.</p>
+      <p>London has over 13 million inhabitants.</p>
+    </div>
+    <div style="background-color:#c51b45;">
+      <h2>Суббота</h2>
+      <p>London is the capital city of England.</p>
+      <p>London has over 13 million inhabitants.</p>
+    </div>
+  </div>
+  <div class="right_container">
+    <h2>Воскресенье</h2>
+  </div>
+
+</body>
+</html>
