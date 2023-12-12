@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  word-break:break-all;
+}
+
+.container {  
+  background-color: #c1b7b0;
+  display: grid;
+  width:100wh;
+  height: 100vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: 
+    "roles goals"; 
+}
+
+.roles, .goals {
+  border: solid;
+  overflow-y: scroll;
+  border-width: thin;
+  font-size: x-large;
+}
+
+
+.roles { 
+  grid-area: roles;
+}
+
+.goals { 
+  grid-area: goals;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+p {
+  margin: 0.5%;
+  color: #3355aa;
+}
+
+h2 {
+  font-size: medium;
+  margin: 0.5%;
+  text-decoration: underline;
+}
+
+</style>
+<body>
+  <div class="container">
+    <div class="roles">
+      <h2>Роли</h2>
+      <form> 
+        <input type="text" id="role" name="role" method="POST">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="goals">
+      <h2>Цели</h2>
+      <form> 
+        <input type="text" id="goal" name="goal" method="POST">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
