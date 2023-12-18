@@ -12,12 +12,6 @@ html, body {
   display: grid;
   width:100wh;
   height: 100vh;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: 
-    "roles goals"; 
 }
 
 .roles, .goals {
@@ -27,13 +21,40 @@ html, body {
   font-size: x-large;
 }
 
-
-.roles { 
-  grid-area: roles;
+.table {
+  height: 100%;
+  width: 100%;
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-collapse: collapse;
+  border: 1px;
 }
 
-.goals { 
-  grid-area: goals;
+.row:after {
+  content: "";
+  display: table-row;
+  clear: both;
+}
+
+.column {
+  {% comment %} border: solid; {% endcomment %}
+  float: left;
+  position: relative;
+  display: table-column;
+}
+
+.left {
+  width: 50%;
+  box-shadow: 0px -1px 0px 0px black, 0px 0px 0px 0px black;
+}
+
+.right {
+  width: 50%;
+  box-shadow: -1px -1px 0px 0px black, 1px 0px 0px 0px black;
 }
 
 ::-webkit-scrollbar {
@@ -54,21 +75,28 @@ h2 {
 </style>
 <body>
   <div class="container">
-    <div class="roles">
-      <h2>Роли</h2>
-      <form> 
-        <input type="text" id="role" name="role" method="POST">
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    <div class="goals">
-      <h2>Цели</h2>
-      <form> 
-        <input type="text" id="goal" name="goal" method="POST">
-        <input type="submit" value="Submit">
-      </form>
+    <div class = "table">
+      {% for role in roles_list %}
+      <div class="row">
+        <div class ="column left">
+          <form> 
+            <input type="text" id="role" name="role" method="POST">
+            <input type="submit" value="Submit">
+          </form>
+            <p>{{role.role_name}}</p>
+        </div>
+        <div class = "column right">
+          <form> 
+            <input type="text" id="goal" name="goal" method="POST">
+            <input type="submit" value="Submit">
+          </form>
+          {% for goal in goals_list %}
+            <p><span>{{goal.goal_text}}</span></p>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
-
 </body>
 </html>
