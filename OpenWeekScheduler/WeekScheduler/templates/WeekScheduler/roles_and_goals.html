@@ -79,23 +79,27 @@ h2 {
       {% for role in roles_list %}
       <div class="row">
         <div class ="column left">
-          <form> 
-            <input type="text" id="role" name="role" method="POST">
-            <input type="submit" value="Submit">
-          </form>
             <p>{{role.role_name}}</p>
         </div>
         <div class = "column right">
-          <form> 
-            <input type="text" id="goal" name="goal" method="POST">
+          {% for goal in goals_list %}
+            {% if goal.role_id.id == role.id %}
+              <p><span>{{goal.goal_text}}</span></p>
+            {% endif %}
+          {% endfor %}
+          <form action="handle_goal_add" method="post">
+          {% csrf_token %}
+            {% comment %} <input type="text" id="{{role.id}}" name="goal" method="POST"> {% endcomment %}
+            {{form}}
             <input type="submit" value="Submit">
           </form>
-          {% for goal in goals_list %}
-            <p><span>{{goal.goal_text}}</span></p>
-          {% endfor %}
         </div>
       </div>
       {% endfor %}
+      <form> 
+        <input type="text" id="role" name="role" method="POST">
+        <input type="submit" value="Submit">
+      </form>
     </div>
   </div>
 </body>
