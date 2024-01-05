@@ -76,7 +76,7 @@ h2 {
 <body>
   <div class="container">
     <div class = "table">
-      {% for role in roles_list %}
+      {% for role, role_form in roles_form_list%}
       <div class="row">
         <div class ="column left">
             <p>{{role.role_name}}</p>
@@ -90,7 +90,8 @@ h2 {
           <form action="handle_goal_add" method="post">
           {% csrf_token %}
             {% comment %} <input type="text" id="{{role.id}}" name="goal" method="POST"> {% endcomment %}
-            {{form}}
+            {{role_form.goal_text}}
+            {{role_form.role.as_hidden}}
             <input type="submit" value="Submit">
           </form>
         </div>
