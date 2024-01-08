@@ -76,7 +76,7 @@ h2 {
 <body>
   <div class="container">
     <div class = "table">
-      {% for role, role_form in roles_form_list%}
+      {% for role, role_form in goles_form_list%}
       <div class="row">
         <div class ="column left">
             <p>{{role.role_name}}</p>
@@ -97,8 +97,9 @@ h2 {
         </div>
       </div>
       {% endfor %}
-      <form> 
-        <input type="text" id="role" name="role" method="POST">
+      <form action="handle_new_role" method="post">
+        {% csrf_token %} 
+        {{role_forms.role_name}}
         <input type="submit" value="Submit">
       </form>
     </div>

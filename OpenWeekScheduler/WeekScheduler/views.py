@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 
 from .models import Goal, Role
-from .forms import Goal_form
+from .forms import Goal_form, Role_form
 
 
 
@@ -20,6 +20,17 @@ def handle_new_goal(request):
         return render(request, "WeekScheduler/test.html")
 
 
+def handle_new_role(request):
+    if request.method == "POST":
+        form = Role_form(request.POST)
+        if form.is_valid():
+            add_role = Role(role_name=form.cleaned_data['role_name'])
+            add_role.save()
+            return HttpResponseRedirect("/WeekScheduler/")
+        print(form.errors)
+        return render(request, "WeekScheduler/test.html")
+
+
 def role_and_goal(request):
     roles_list = Role.objects.all()
     goals_list = Goal.objects.all()
@@ -27,9 +38,11 @@ def role_and_goal(request):
     for role in roles_list:
         print(type(int(role.pk)))
         forms.append(Goal_form(initial={'role': int(role.pk)}))
+    role_form = Role_form()
     context = {
         "roles_list": roles_list,
         "goals_list": goals_list,
-        "roles_form_list": zip(roles_list, forms),
+        "goles_form_list": zip(roles_list, forms),
+        "role_forms": role_form
     }
     return render(request, "WeekScheduler/roles_and_goals.html", context)
