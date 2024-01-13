@@ -6,5 +6,8 @@ When adding a new week you will be transfered to page to fill roles and goles fo
 You will be able to highlight accomplished goals with green and failed goals with red.
 ![OWS_preview](https://github.com/vlad9i22/OpenWeekScheduler/assets/25961793/0e875777-9364-40fe-b788-3e51626cec6c)
 
+# Main tools: 
+- Django
+
 # Known issues
 1. Two forms in the same place, when adding a role without any goals
